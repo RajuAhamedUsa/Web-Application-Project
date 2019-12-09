@@ -26,7 +26,7 @@ require 'config/logonC.php';
 		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
 
 		<!-- nouislider -->
-		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/> 
 
 		<!-- Font Awesome Icon -->
 		<link rel="stylesheet" href="css/font-awesome.min.css">
