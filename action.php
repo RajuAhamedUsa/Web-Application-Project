@@ -1,24 +1,24 @@
 <?php 
 
- require 'config/config.php';
+  session_start();
+ 
+   if (isset($_GET['remove'])) {
+       $id=$_GET['remove'];
+       echo '<script type ="text/javascript"> alert("sign button click") </script>';
 
-  if(isset($_POST['pid'])){
+      $stmt=$con->prepare("DELETE FROM cart WHERE id=?");
+      $stmt->bind_param("i",$id);
+      $stmt->execute();
 
- $pid= $_POST['pid'];
- $pname= $_POST['pname'];
- $pprice= $_POST['pprice'];
- $pimage= $_POST['pimage'];
- $pqty= 1;
+      $_SESSION['showAlert']='block';
+      $_SESSION['message']='Item removed from the cart';
+      header('Location:cartform.php');
 
- $query=" insert into cart values ('$pid','$pimage','$pname','$pprice','$pqty','$pprice')";
-  $query_run=mysqli_query($con,$query);
+   }
+   
 
-echo '<div class="alert alert-success alert-dismissible">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>Item Added</strong>
-</div>'
 
-  }
+
 
 
 ?>
