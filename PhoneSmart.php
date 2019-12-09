@@ -213,7 +213,7 @@ Easy to use: You just need to do is: transfer your original home button to the n
       <label><input type="radio" name="delivery" value="10">Express delivery $10 extra</labe></label></tr></div>
 
 
-			             </div>  
+		</div>
 			          
 
                   
