@@ -32,7 +32,7 @@
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
             <input type="text" id="fname" name="firstname" placeholder="Type Your Full Name">
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="Type Your Email Address">
+            <input type="text" id="email" name="email" placeholder="Type Your Email Address"> 
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
             <input type="text" id="adr" name="address" placeholder="User Home Address">
             <label for="city"><i class="fa fa-institution"></i> City</label>
