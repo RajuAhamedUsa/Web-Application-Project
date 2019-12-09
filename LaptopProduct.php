@@ -173,14 +173,14 @@ require 'config/config.php';
 
 
 					<li>802.11ac Wi-Fi</li>
-					 <form  method="post">
+					 
               <!-- Default input -->
-              <input type="number" value="1" aria-label="Search" class="auto-style3" style="width: 100px; height:45px; padding: 5px; border-radius: 10px;">
+              <input type="number" name="qty" value="1" aria-label="Search" class="auto-style3" style="width: 100px; height:45px; padding: 5px; border-radius: 10px;">
               <button class="btn btn-primary btn-md my-0 p" name="product14" onclick="myFunction()" type="submit" style="width: 150px; height: 45px; border-radius: 10px; font-size: medium">&nbsp;Add to cart
                 <i class="fa fa-shopping-cart"></i>
               </button>
 
-            </form>
+            
 
 
 
@@ -221,22 +221,45 @@ require 'config/config.php';
             </div>
 	 
 			   </div>
+	                                      <?php 
 
-										<?php 
-										     $id=$row1['id'];
-										     $productprice=$row1['product_price'];
-										    $productname=$row1['product_name'];
-										    $productimage='<img src="data:image/jpeg;base64,'.base64_encode( $row1['product_image'] ).'"/>';
-										   
-                                              if (isset($_POST['product'])) 
+										     $id=$row14['id'];
+										     $productprice=$row14['product_price'];
+										    $productname=$row14['product_name'];
+										    $productimage='<img src="data:image/jpeg;base64,'.base64_encode( $row14['product_image'] ).'"/>';
+                                              if (isset($_POST['product14'])) 
 
                                               {
+                                              	$pqtr=$_POST['qty'];
+                                             
 
-                                                   $q=$_POST['qty'];
-                                                   $color=$_POST['color'];
-                                                   $size=$_POST['size'];
-                                                   $Rdelivery=$_POST['delivery'];
-                                                  $Rdelivery=$_POST['delivery'];
+                                              	  $radioVal=$_POST['color'];
+										     if ($radioVal=="Black") 
+										     {
+										          $color="Black";
+										     }
+										     if ($radioVal=="Silver") {
+										     	$color="Silver";
+										     	# code...
+										     }
+										     if ($radioVal=="Pink") {
+										     	$color="Pink";
+										     	# code...
+										     }
+										     $radioSize=$_POST['size'];
+										     if ($radioSize=="Small") {
+										     	$size="Small";
+										     	# code...
+										     }
+										     if ($radioSize=="Medium") {
+										     	$size="Medium";
+										     	# code...
+										     }
+										     if ($radioSize=="Large") {
+										     	$size="Large";
+										     	# code...
+										     }
+										     $Rdelivery=$_POST['delivery'];
 										     if ($Rdelivery=="Free delivery") {
 										     	$delivery="Free delivery";
 										     	$total=$productprice*$pqtr;
@@ -244,17 +267,18 @@ require 'config/config.php';
 										     }
 										     if ($Rdelivery=="5") {
 										     	$delivery="Two Days Delivery $5 extra";
-										     	$total=($productprice*$q)+5;
+										     	$total=($productprice*$pqtr)+5;
 										     	
 										     }
 										     if ($Rdelivery=="10") {
 										     	$delivery="Express delivery $10 extra";
-										     	$total=($productprice*$q)+10;
+										     	$total=($productprice*$pqtr)+10;
 										     	# code...
 										     }
 
+                                                   
  
-                                                  $query=" insert into cart values ('$id','$productimage','$productname','$color','$size','$productprice','$delivery','$q','$total')";
+                                                  $query=" insert into cart values ('$id','$productimage','$productname','$color','$size','$productprice','$delivery','$pqtr','$total')";
                                                   $query_run=mysqli_query($con,$query);
 
 
@@ -265,7 +289,6 @@ require 'config/config.php';
 
 
 										?>
-
 			   <hr>  
 			   
 
