@@ -1,6 +1,6 @@
 <?php
 require 'config/config.php';
-require 'config/productLaptop.php';
+require 'config/productLaptop.php';  
 include 'config/logonC.php';
 ?>
 
