@@ -3,7 +3,7 @@ require 'config/config.php';
 
 
 
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
